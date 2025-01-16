@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
+  <VApp>
+    <Navbar />
+  </VApp>
 </template>
+
+<script setup>
+import Navbar from './components/Navbar.vue'
+</script>
