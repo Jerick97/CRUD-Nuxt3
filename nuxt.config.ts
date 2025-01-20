@@ -1,16 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
- compatibilityDate: "2025-11-01",
- devtools: { enabled: true },
+	compatibilityDate: "2025-11-01",
+	devtools: { enabled: true },
 
- css: [
-					"vuetify/lib/styles/main.sass",
-					"@mdi/font/css/materialdesignicons.min.css",
+	css: [
+		"vuetify/lib/styles/main.sass",
+		"@mdi/font/css/materialdesignicons.min.css",
 	],
 
- build: {
-					transpile: ["vuetify"],
+	build: {
+		transpile: ["vuetify"],
 	},
 
- modules: ["@pinia/nuxt"],
+	modules: ["@pinia/nuxt"],
+	runtimeConfig: {
+		MONGO_URI: process.env.MONGO_URI,
+	},
 });
