@@ -1,6 +1,11 @@
 import { connect } from "mongoose";
 export default defineNitroPlugin(async (nitroApp) => {
 	const runtimeConfig = useRuntimeConfig();
-	await connect(runtimeConfig.MONGO_URI);
-	console.log("Connected to MongoDB");
+	try {
+		await connect(runtimeConfig.MONGO_URI);
+		console.log("✅ MongoDB conectado");
+	} catch (error) {
+		console.error("❌ Error conectando a MongoDB:", error);
+		throw error;
+	}
 });
