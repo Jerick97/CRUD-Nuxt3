@@ -17,6 +17,8 @@
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
+
 const campos = reactive({
     nombre: '',
     descripcion: ''
