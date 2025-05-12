@@ -17,6 +17,12 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+    layout: 'default',
+    middleware: 'auth'
+})
+import { storeToRefs } from 'pinia';
+
 const campos = reactive({
     nombre: '',
     descripcion: ''

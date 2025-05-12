@@ -14,8 +14,13 @@ export default defineNuxtConfig({
 		transpile: ["vuetify"],
 	},
 
-	modules: ["@pinia/nuxt"],
+	modules: ["@pinia/nuxt", "@nuxtjs/supabase"],
 	runtimeConfig: {
 		MONGO_URI: process.env.MONGO_URI,
+		SUPABASE_URL: process.env.SUPABASE_URL,
+		SUPABASE_KEY: process.env.SUPABASE_KEY,
+	},
+	supabase: {
+		redirect: false,
 	},
 });

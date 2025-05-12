@@ -34,6 +34,10 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+    layout: 'default',
+    middleware: 'auth'
+})
 import { storeToRefs } from 'pinia'
 const peliculaStore = usePeliculasStore()
 const { obtenerPeliculas, eliminarPelicula, setPeliculaActual } = peliculaStore
